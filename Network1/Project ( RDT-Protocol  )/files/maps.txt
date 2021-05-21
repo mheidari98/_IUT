@@ -1,0 +1,5 @@
+A-B,True,15,80
+B-C,True,15,80
+C-D,False,10,70
+D-E,False,20,100
+E-F,True,5,80
