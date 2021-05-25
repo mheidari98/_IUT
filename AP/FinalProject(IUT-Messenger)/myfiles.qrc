@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/pics">
+        <file>propic.png</file>
+        <file>background1.jpg</file>
+        <file>connected.png</file>
+        <file>unconnected.png</file>
+        <file>blue.gif</file>
+    </qresource>
+</RCC>
