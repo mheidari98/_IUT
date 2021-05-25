@@ -1,0 +1,778 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: MipsProcessor.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MipsProcessor.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MipsProcessor"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : MipsProcessor
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\SignExtend.v" into library work
+Parsing module <SignExtend>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\Register.v" into library work
+Parsing module <Register>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\NewCLK.v" into library work
+Parsing module <ClkChanger>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\MUX2to1.v" into library work
+Parsing module <MUX2to1>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\InstructionMemory.v" into library work
+Parsing module <InstructionMemory>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\Incrementer.v" into library work
+Parsing module <Incrementer>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\DataMemory.v" into library work
+Parsing module <DataMemory>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\Control.v" into library work
+Parsing module <Control>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\BankRegister.v" into library work
+Parsing module <BankRegister>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\ALU_control.v" into library work
+Parsing module <ALU_control>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\Add.v" into library work
+Parsing module <Add>.
+Analyzing Verilog file "D:\Xilinx\CODE\Final_Project\MipsProcessor.v" into library work
+Parsing module <MipsProcessor>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <MipsProcessor>.
+
+Elaborating module <ClkChanger(N=2)>.
+WARNING:HDLCompiler:413 - "D:\Xilinx\CODE\Final_Project\NewCLK.v" Line 13: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "D:\Xilinx\CODE\Final_Project\NewCLK.v" Line 18: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <Register(N=32)>.
+
+Elaborating module <Incrementer(N=32)>.
+
+Elaborating module <InstructionMemory(IM=5,N=32)>.
+WARNING:HDLCompiler:634 - "D:\Xilinx\CODE\Final_Project\InstructionMemory.v" Line 8: Net <memory[0][31]> does not have a driver.
+
+Elaborating module <SignExtend(Nin=16,Nout=32)>.
+
+Elaborating module <Add(N=32)>.
+
+Elaborating module <Control>.
+
+Elaborating module <MUX2to1(N=5)>.
+
+Elaborating module <BankRegister(BR=5,N=32)>.
+WARNING:HDLCompiler:872 - "D:\Xilinx\CODE\Final_Project\BankRegister.v" Line 10: Using initial value of zero_reg since it is never assigned
+
+Elaborating module <MUX2to1(N=32)>.
+
+Elaborating module <ALU_control>.
+
+Elaborating module <ALU(P=4,N=32)>.
+
+Elaborating module <DataMemory(DM=7,N=32)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MipsProcessor>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\MipsProcessor.v".
+    Summary:
+	no macro.
+Unit <MipsProcessor> synthesized.
+
+Synthesizing Unit <ClkChanger>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\NewCLK.v".
+        N = 2
+    Found 2-bit register for signal <counter>.
+    Found 2-bit adder for signal <counter[1]_GND_2_o_mux_2_OUT> created at line 13.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+Unit <ClkChanger> synthesized.
+
+Synthesizing Unit <Register>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\Register.v".
+        N = 32
+    Found 32-bit register for signal <out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <Register> synthesized.
+
+Synthesizing Unit <Incrementer>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\Incrementer.v".
+        N = 32
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit adder for signal <out> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Incrementer> synthesized.
+
+Synthesizing Unit <InstructionMemory>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\InstructionMemory.v".
+        N = 32
+        IM = 5
+WARNING:Xst:653 - Signal <memory<0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<1>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<4>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<5>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<6>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<7>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<8>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<9>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<10>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<11>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<12>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<13>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<14>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<15>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<16>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<17>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<18>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<19>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<20>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<21>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<22>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<23>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<24>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<25>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<26>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<27>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<28>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<29>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <memory<30>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <InstructionMemory> synthesized.
+
+Synthesizing Unit <SignExtend>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\SignExtend.v".
+        Nin = 16
+        Nout = 32
+    Found 32-bit register for signal <out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <SignExtend> synthesized.
+
+Synthesizing Unit <Add>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\Add.v".
+        N = 32
+    Found 32-bit adder for signal <out> created at line 8.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Add> synthesized.
+
+Synthesizing Unit <Control>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\Control.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <RegDst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ALUsrc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <MemtoReg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <RegWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <MemRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <MemWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Branch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ALUop<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Jump>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Jal>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Jr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  11 Latch(s).
+	inferred  26 Multiplexer(s).
+Unit <Control> synthesized.
+
+Synthesizing Unit <MUX2to1_1>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\MUX2to1.v".
+        N = 5
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX2to1_1> synthesized.
+
+Synthesizing Unit <BankRegister>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\BankRegister.v".
+        N = 32
+        BR = 5
+    Found 32x32-bit dual-port RAM <Mram_Registers> for signal <Registers>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Multiplexer(s).
+Unit <BankRegister> synthesized.
+
+Synthesizing Unit <MUX2to1_2>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\MUX2to1.v".
+        N = 32
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX2to1_2> synthesized.
+
+Synthesizing Unit <ALU_control>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\ALU_control.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <op<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <op<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <op<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <op<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   4 Latch(s).
+	inferred  12 Multiplexer(s).
+Unit <ALU_control> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\ALU.v".
+        N = 32
+        P = 4
+    Found 32-bit register for signal <result>.
+    Found 32-bit subtractor for signal <in1[31]_in2[31]_sub_6_OUT> created at line 19.
+    Found 32-bit adder for signal <in1[31]_in2[31]_add_4_OUT> created at line 18.
+    Found 32-bit comparator equal for signal <Zero> created at line 11
+    Found 32-bit comparator greater for signal <in1[31]_in2[31]_LessThan_7_o> created at line 20
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <DataMemory>.
+    Related source file is "D:\Xilinx\CODE\Final_Project\DataMemory.v".
+        N = 32
+        DM = 7
+    Found 128x32-bit single-port RAM <Mram_memory> for signal <memory>.
+    Found 32-bit register for signal <ReadData>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <DataMemory> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 128x32-bit single-port RAM                            : 1
+ 32x32-bit dual-port RAM                               : 2
+# Adders/Subtractors                                   : 5
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 1
+# Registers                                            : 5
+ 2-bit register                                        : 1
+ 32-bit register                                       : 4
+# Latches                                              : 15
+ 1-bit latch                                           : 15
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 49
+ 1-bit 2-to-1 multiplexer                              : 38
+ 32-bit 2-to-1 multiplexer                             : 9
+ 5-bit 2-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <out_15> in Unit <SE> is equivalent to the following 16 FFs/Latches, which will be removed : <out_16> <out_17> <out_18> <out_19> <out_20> <out_21> <out_22> <out_23> <out_24> <out_25> <out_26> <out_27> <out_28> <out_29> <out_30> <out_31> 
+WARNING:Xst:1293 - FF/Latch <out_12> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_13> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_14> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_15> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_16> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_17> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_18> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_19> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_20> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_21> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_22> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_23> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_24> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_25> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_26> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_27> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_28> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_29> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_30> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_31> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jal> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jump> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jr> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RegDst> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_3> (without init value) has a constant value of 0 in block <AluCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_0> (without init value) has a constant value of 0 in block <AluCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_1> (without init value) has a constant value of 1 in block <AluCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_0> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_1> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_2> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_3> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_4> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_5> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_6> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_7> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_8> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_9> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_10> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_11> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_12> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_13> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_14> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_15> (without init value) has a constant value of 0 in block <SE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_0> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_1> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_2> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_3> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_4> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_5> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_6> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_7> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_8> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_9> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_10> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_11> has a constant value of 1 in block <PC>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1290 - Hierarchical block <PcAdd> is unconnected in block <MipsProcessor>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <PcMux> is unconnected in block <MipsProcessor>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <JrMux> is unconnected in block <MipsProcessor>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <JumpMux> is unconnected in block <MipsProcessor>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <BankRegister>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Registers> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <WriteRegister> |          |
+    |     diA            | connected to signal <WriteData>     |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <ReadRegister1> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Registers1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <WriteRegister> |          |
+    |     diA            | connected to signal <WriteData>     |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <ReadRegister2> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <BankRegister> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ClkChanger>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <ClkChanger> synthesized (advanced).
+
+Synthesizing (advanced) Unit <MipsProcessor>.
+INFO:Xst:3225 - The RAM <DataMem/Mram_memory> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <MemWrite>      | high     |
+    |     addrA          | connected to signal <AluResult<6:0>> |          |
+    |     diA            | connected to signal <ReadData2>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <MainAlu/operation[3]_in1[31]_select_17_OUT<6:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <MipsProcessor> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 128x32-bit dual-port block RAM                        : 1
+ 32x32-bit dual-port distributed RAM                   : 2
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 1
+# Counters                                             : 1
+ 2-bit up counter                                      : 1
+# Registers                                            : 128
+ Flip-Flops                                            : 128
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 80
+ 1-bit 2-to-1 multiplexer                              : 70
+ 32-bit 2-to-1 multiplexer                             : 8
+ 5-bit 2-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <out_31> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_30> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_29> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_28> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_27> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_26> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_25> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_24> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_23> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_22> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_21> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_20> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_19> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_18> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_17> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_16> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_15> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_14> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_13> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_12> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_11> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_10> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_9> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_8> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_7> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_6> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_5> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_4> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_3> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_2> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_1> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_0> has a constant value of 1 in block <Register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_3> (without init value) has a constant value of 0 in block <ALU_control>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <out_15> in Unit <SignExtend> is equivalent to the following 16 FFs/Latches, which will be removed : <out_16> <out_17> <out_18> <out_19> <out_20> <out_21> <out_22> <out_23> <out_24> <out_25> <out_26> <out_27> <out_28> <out_29> <out_30> <out_31> 
+INFO:Xst:2261 - The FF/Latch <out_0> in Unit <SignExtend> is equivalent to the following 15 FFs/Latches, which will be removed : <out_1> <out_2> <out_3> <out_4> <out_5> <out_6> <out_7> <out_8> <out_9> <out_10> <out_11> <out_12> <out_13> <out_14> <out_15> 
+WARNING:Xst:1710 - FF/Latch <out_0> (without init value) has a constant value of 0 in block <SignExtend>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jal> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jump> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Jr> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RegDst> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_0> (without init value) has a constant value of 0 in block <ALU_control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <op_1> (without init value) has a constant value of 1 in block <ALU_control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Mram_Registers2> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers3> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers6> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers4> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers5> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers11> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers12> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers13> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers14> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers15> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers71> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers162> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers72> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:2677 - Node <Mram_Registers161> of sequential type is unconnected in block <BankRegister>.
+WARNING:Xst:1710 - FF/Latch <ALUsrc> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RegWrite> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemRead> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemWrite> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Branch> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ALUop_1> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemtoReg> (without init value) has a constant value of 0 in block <Control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AluCtrl/op_2> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_1> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_2> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_3> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_4> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_5> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_6> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_7> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_8> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_9> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_10> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_11> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_12> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_13> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_14> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_15> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_16> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_17> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_18> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_19> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_20> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_21> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_22> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_23> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_24> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_25> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_26> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_27> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_28> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_29> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_30> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_31> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_0> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_1> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_2> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_3> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_4> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_5> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_6> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_7> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_8> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_9> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_10> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_11> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_12> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_13> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_14> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_15> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataMem/ReadData_0> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_31> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_30> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_29> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_28> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_27> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_26> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_25> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_24> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_23> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_22> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_21> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_20> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_19> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_18> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_17> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MainAlu/result_16> (without init value) has a constant value of 0 in block <MipsProcessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <DataMem/Mram_memory> is unconnected in block <MipsProcessor>.
+
+Optimizing unit <MipsProcessor> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MipsProcessor, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MipsProcessor.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# IO Buffers                       : 246
+#      OBUF                        : 246
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                         247
+ Number of bonded IOBs:                 246  out of    102   241% (*) 
+
+Specific Feature Utilization:
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.32 secs
+ 
+--> 
+
+Total memory usage is 4509976 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  238 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+
