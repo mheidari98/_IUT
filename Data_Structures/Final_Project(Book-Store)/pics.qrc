@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/err">
+        <file>err1.png</file>
+        <file>err2.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>bg1.jpg</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file>back1</file>
+    </qresource>
+</RCC>
