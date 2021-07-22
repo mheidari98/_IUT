@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:518180F4
+NODE:I LEVEL:0 LINE:2 "myheader.h"
+NODE:V LEVEL:0 LINE:4 "data_spi -> RAM:????"
+NODE:V LEVEL:0 LINE:5 "num_data_spi -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "new_data_spi -> R2.0"
+NODE:V LEVEL:0 LINE:7 "master_micro -> R2.1"
+NODE:F LEVEL:0 LINE:9 "spi_init(void)"
+NODE:F LEVEL:0 LINE:28 "spi_init_slave(void)"
+NODE:F LEVEL:0 LINE:51 "spi_isr(void)"

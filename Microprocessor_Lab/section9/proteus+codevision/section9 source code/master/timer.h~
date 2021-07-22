@@ -1,0 +1,15 @@
+#ifndef _timer_INCLUDED_
+#define _timer_INCLUDED_
+
+void hms_display(void);
+interrupt [TIM1_OVF] void timer1_ovf_isr(void);
+void timer1_init(void);
+void clockdisplay(void);
+
+
+
+
+
+
+#endif
+

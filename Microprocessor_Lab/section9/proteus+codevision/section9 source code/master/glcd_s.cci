@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:518364B0
+NODE:I LEVEL:0 LINE:1 "myheader.h"
+NODE:I LEVEL:0 LINE:2 "clock.h"
+NODE:I LEVEL:0 LINE:3 "timer.h"
+NODE:F LEVEL:0 LINE:7 "glcd_init_func(void)"
+NODE:F LEVEL:0 LINE:23 "clock_display(void)"
+NODE:F LEVEL:0 LINE:29 "deleteclock(unsigned char data,unsigned char xxold,unsigned char yyold)"

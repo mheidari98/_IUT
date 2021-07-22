@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:51811953
+NODE:I LEVEL:0 LINE:6 "C:\cvavr\BIN\work\az9\az9\master\myheader.h"
+NODE:F LEVEL:0 LINE:11 "I2C_Init2(void)"
+NODE:F LEVEL:0 LINE:17 "I2C_Start2(unsigned char write_address)"
+NODE:F LEVEL:0 LINE:37 "I2C_Repeated_Start(unsigned char read_address)"
+NODE:F LEVEL:0 LINE:57 "I2C_Stop2(void)"
+NODE:F LEVEL:0 LINE:63 "I2C_Start_Wait(unsigned char write_address)"
+NODE:F LEVEL:0 LINE:87 "I2C_Write2(unsigned char data)"
+NODE:F LEVEL:0 LINE:102 "I2C_Read_Ack(void)"
+NODE:F LEVEL:0 LINE:109 "I2C_Read_Nack(void)"

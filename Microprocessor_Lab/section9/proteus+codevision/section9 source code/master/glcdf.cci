@@ -1,0 +1,6 @@
+VERSION:3 SOURCE_TIMESTAMP:51836472
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\BIN\work\az9\az9\master\myheader.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\BIN\work\az9\az9\master\mandala2.h"
+NODE:F LEVEL:0 LINE:4 "glcddisplay(void)"
+NODE:F LEVEL:0 LINE:19 "glcd_init_func(void)"
+NODE:F LEVEL:0 LINE:33 "glcddisplay2(void)"

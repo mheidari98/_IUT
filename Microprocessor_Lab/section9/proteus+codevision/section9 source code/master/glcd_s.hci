@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:5183623A
+NODE:M LEVEL:0 LINE:2 "_glcd_s_INCLUDED_"
+NODE:M LEVEL:0 LINE:4 "x_center_clock"
+NODE:M LEVEL:0 LINE:5 "y_center_clock"
+NODE:M LEVEL:0 LINE:6 "sec_radius"
+NODE:M LEVEL:0 LINE:7 "min_radius"
+NODE:M LEVEL:0 LINE:8 "hour_radius"
