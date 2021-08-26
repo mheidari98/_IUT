@@ -1,0 +1,59 @@
+1)
+cd /
+ls -l
+	{ proc - sys }
+cd ~
+touch oslab1_2
+ls -l
+	{ 11:21 }
+vim oslab1_2  >> :wq
+cat oslab1_2 
+ls -l
+	{ 11:22 }
+sudo cp oslab1_2 /root/
+chmod -w oslab1_2
+
+
+2)
+ifconfig
+	{ inet 172.21.49.137 }
+
+** => bale ba { ping 172.21.49.144 }
+ssh oslab@172.21.49.144
+exit
+scp oslab@172.21.49.144:~/oslab1_group2  ~/Desktop/
+
+
+3)
+top
+	{ gnome-shell   Xorg    gnome-shell }
+top | grep migration  or   ps -a | grep migration
+
+
+
+4)
+
+apt-cache search linux-source
+
+tar -xvf usr/src/linux-source-5.0.0.tar
+find -name syscall.tbl
+grep write ./arch/arm/tools/syscall.tbl -c     >>>>   7
+
+
+gedit 9626903_oslab1_q2
+cat syscall.tbl | grep write >  9626903_oslab1_q2
+
+{ 
+4	common	write			sys_write
+146	common	writev			sys_writev
+181	common	pwrite64		sys_pwrite64		sys_oabi_pwrite64
+273	common	pciconfig_write		sys_pciconfig_write
+362	common	pwritev			sys_pwritev
+377	common	process_vm_writev	sys_process_vm_writev
+393	common	pwritev2		sys_pwritev2
+
+}
+
+
+
+
