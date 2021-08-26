@@ -24,7 +24,7 @@ If require further information for some of the contents, feel free to contact me
   * [Operating Systems (OS)](https://github.com/mheidari98/_IUT/tree/main/Operating_Systems/Projects)
   * [Operating Systems Lab](https://github.com/mheidari98/_IUT/tree/main/Operating_Systems_Lab)
 - ## **98-99 - Spring 2020** ![Term 6]( https://img.shields.io/badge/Term-6-yellow )
-  * [HardwareDescriptionLanguages (FPGA)](https://github.com/mheidari98/_IUT/tree/main/HardwareDescriptionLanguages(FPGA)/MIPS_RISC_Processor)
+  * [Hardware Description Languages (FPGA)](https://github.com/mheidari98/_IUT/tree/main/HardwareDescriptionLanguages(FPGA)/MIPS_RISC_Processor)
   * [Secure Computing](https://github.com/mheidari98/_IUT/tree/main/SecureComputing/Project(Secure-File-Sharing))
 
 - ## **99-00 - Fall 2020** ![Term 7]( https://img.shields.io/badge/Term-7-yellowgreen )
