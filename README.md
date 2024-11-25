@@ -27,6 +27,8 @@ If require further information for some of the contents, feel free to contact me
   * [Compiler](https://github.com/mheidari98/_IUT/tree/main/Compiler/Project(C-Compiler))
     - *C-- Compiler*: Implemented a C-- compiler using Flex (tokenizer) and Bison (parser) that converts C programs into MIPS assembly code, executable via the QtSpim simulator. This project enhanced my understanding of compiler construction, lexical analysis, parsing, and assembly language.
   * [Operating Systems (OS)](https://github.com/mheidari98/_IUT/tree/main/Operating_Systems/Projects)
+    - *My First OS*: A simple x86 bootloader written in assembly to understand the boot process and basic OS development, using tools like NASM and QEMU for building and testing.
+    - *A Firewall Loadable Kernel Module (LKM)* using C and Netfilter for dynamic packet filtering based on user-defined rules.
   * [Operating Systems Lab](https://github.com/mheidari98/_IUT/tree/main/Operating_Systems_Lab)
 - ## **98-99 - Spring 2020** ![Term 6]( https://img.shields.io/badge/Term-6-yellow )
   * [Hardware Description Languages (FPGA)](https://github.com/mheidari98/_IUT/tree/main/HardwareDescriptionLanguages(FPGA)/MIPS_RISC_Processor)
